@@ -5,6 +5,8 @@
 1. OrangeFox is [here](https://github.com/azwhikaru/Action-OFRP-Builder)
 
 ## Notice
+  
+0. Android 9.0或以下用https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
 
 1. Github Actions service is **NOT** unlimited so to avoid waste, don't use unverified source code in this, the best used to automate builds of repositories that are already stabilized
 
