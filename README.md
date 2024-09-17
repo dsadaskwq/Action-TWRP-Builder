@@ -1,4 +1,4 @@
-## Automated TWRP compilation based on Github Action
+## 使用Github Action编译Recovery
 
 ## Advertising
 
@@ -12,7 +12,7 @@
 
 3. issues and Pull Requests may **NOT** get a reply. If you think is really necessary, use email on my profile to contact me
 
-4. Python 2 in Debian (Ubuntu) has been **removed**. If you are working on Android 8.1 and below, use *Recovery Build (Legacy)*
+4. Debian (Ubuntu) 中的 Python 2 已被删除。 如果您使用的是 Android 8.1 及更低版本，请使用 *Recovery Build (Legacy)*
 
 5. Don't ask any questions about your source code, such as
 	- No rule to make ...
