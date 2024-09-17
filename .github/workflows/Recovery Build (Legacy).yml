@@ -4,25 +4,25 @@ on:
   workflow_dispatch:
     inputs:
       MANIFEST_URL:
-        description: 'MANIFEST_URL (if want to use SSH keys, use git@github.com:XXXXX)'
+        description: '源码地址 (if want to use SSH keys, use git@github.com:XXXXX)'
         required: true
         default: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni'
       MANIFEST_BRANCH:
-        description: 'MANIFEST_BRANCH'
+        description: '源码分支'
         required: true
-        default: 'twrp-7.1'
+        default: 'twrp-9.0'
       DEVICE_TREE_URL:
-        description: 'DEVICE_TREE_URL'
+        description: '设备树地址'
         required: true
-        default: 'https://github.com/ycly2333/android_device_EEBBK_H3000S-twrp'
+        default: 'https://github.com/dsadaskwq/android_device_p291_iptv'
       DEVICE_TREE_BRANCH:
-        description: 'DEVICE_TREE_BRANCH'
+        description: '设备树分支'
         required: true
-        default: 'twrp-7.1'
+        default: 'main'
       DEVICE_PATH:
-        description: 'DEVICE_PATH'
+        description: '设备位置'
         required: true
-        default: 'device/EEBBK/H3000S'
+        default: 'device/unionman/p291_iptv'
       COMMON_TREE_URL:
         description: 'COMMON_TREE_URL (if no common tree, leave blank)'
         required: false
@@ -30,15 +30,15 @@ on:
         description: 'COMMON_PATH (if no common tree, leave blank)'
         required: false
       DEVICE_NAME:
-        description: 'DEVICE_NAME'
+        description: '机型名称'
         required: true
-        default: 'H3000S'
+        default: 'p291_iptv'
       MAKEFILE_NAME:
-        description: 'MAKEFILE_NAME'
+        description: '编译文件名'
         required: true
-        default: 'omni_H3000S'
+        default: 'omni_p291_iptv'
       BUILD_TARGET:
-        description: 'BUILD_TARGET'
+        description: '建立目标分区'
         required: true
         default: 'recovery'
 
