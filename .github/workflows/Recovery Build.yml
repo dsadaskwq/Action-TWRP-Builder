@@ -34,7 +34,7 @@ on:
         required: true
         default: 'I003D'
       MAKEFILE_NAME:
-        description: '编译文件名 (安卓9是omni_xx)'
+        description: '编译文件名'
         required: true
         default: 'twrp_I003D'
       BUILD_TARGET:
