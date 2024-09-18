@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      UPLOAD_RELEASE: false
+      UPLOAD_RELEASE: true
     permissions:
       contents: write
     steps:
