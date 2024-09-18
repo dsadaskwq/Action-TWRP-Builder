@@ -121,8 +121,6 @@ jobs:
 
     - name: 机器信息
       run: |
-          cd ./wrt/
-
           echo "======================="
           lscpu | grep -E "name|Core|Thread"
           echo "======================="
