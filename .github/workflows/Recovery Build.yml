@@ -46,13 +46,13 @@ on:
         required: true
         default: 'false'
         type: boolean
-env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
 jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     permissions:
       contents: write
     steps:
