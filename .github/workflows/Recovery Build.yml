@@ -43,18 +43,14 @@ on:
         default: 'recovery'
         type: choice
         options: [boot, recovery, vendor_boot]
-      UPLOAD_RELEASE:
-        description: '是否上传到Release'
-        required: false
-        default: 'false'
-        type: boolean
-
+      
 jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      UPLOAD_RELEASE: false
     permissions:
       contents: write
     steps:
