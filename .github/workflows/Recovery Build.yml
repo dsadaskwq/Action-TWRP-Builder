@@ -118,7 +118,19 @@ jobs:
       run: |
         repo sync -j$(nproc --all) --force-sync
       working-directory: workspace
-      
+
+    - name: 机器信息
+      run: |
+          cd ./wrt/
+
+          echo "======================="
+          lscpu | grep -E "name|Core|Thread"
+          echo "======================="
+          df -h
+          echo "======================="
+          du -h --max-depth=1
+          echo "======================="
+   
     - name: Clone device tree
       run: |
         git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
