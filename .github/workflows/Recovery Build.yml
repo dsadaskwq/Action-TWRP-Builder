@@ -170,6 +170,7 @@ jobs:
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Upload artifacts
+      if: ${{ github.event.inputs.UPLOAD_RELEASE == 'false' }} 
       uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
