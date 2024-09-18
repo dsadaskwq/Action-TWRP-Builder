@@ -41,6 +41,11 @@ on:
         description: '建立目标分区'
         required: true
         default: 'recovery'
+      UPLOAD_RELEASE:
+        description: '是否上传release? (true/false)'
+        required: true
+        default: 'false'
+        type: boolean
 env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
@@ -155,8 +160,18 @@ jobs:
         export ALLOW_MISSING_DEPENDENCIES=true
         lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts
+        path: |
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/${{ github.event.inputs.BUILD_TARGET }}.img
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.zip
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*vendor*.img
 
+    
     - name: Upload to Release
+      if: ${{ github.event.inputs.UPLOAD_RELEASE == 'true' }}
       uses: softprops/action-gh-release@v1
       with:
         files: | 
